@@ -30,7 +30,7 @@ async function requestLocale() {
  * pamieci niezaleznie od naglowkow cache; nowa wartosc przy kazdej podmianie
  * paczki wymusza pobranie nowych plikow.
  */
-const ICONS_V = "?v=20261125";
+const ICONS_V = "?v=20261125b";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = MESSAGES[await requestLocale()];

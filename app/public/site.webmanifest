@@ -3,25 +3,25 @@
   "short_name": "favicon",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png?v=20261125",
+      "src": "/web-app-manifest-192x192.png?v=20261125b",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/web-app-manifest-512x512.png?v=20261125",
+      "src": "/web-app-manifest-512x512.png?v=20261125b",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/web-app-manifest-maskable-192x192.png?v=20261125",
+      "src": "/web-app-manifest-maskable-192x192.png?v=20261125b",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/web-app-manifest-maskable-512x512.png?v=20261125",
+      "src": "/web-app-manifest-maskable-512x512.png?v=20261125b",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
