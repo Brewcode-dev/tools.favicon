@@ -25,6 +25,13 @@ async function requestLocale() {
   return pickLocale((await headers()).get("accept-language"));
 }
 
+/**
+ * Wersja paczki ikon w adresach. Przegladarki trzymaja favicony we wlasnej
+ * pamieci niezaleznie od naglowkow cache; nowa wartosc przy kazdej podmianie
+ * paczki wymusza pobranie nowych plikow.
+ */
+const ICONS_V = "?v=20261125";
+
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = MESSAGES[await requestLocale()];
   return {
@@ -33,15 +40,15 @@ export async function generateMetadata(): Promise<Metadata> {
     // Ikony z paczki wygenerowanej tym narzedziem (public/, zrodlo: branding/favicon-gen/).
     icons: {
       icon: [
-        { url: "/favicon.ico", sizes: "48x48" },
-        { url: "/favicon.svg", type: "image/svg+xml" },
-        { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+        { url: `/favicon.ico${ICONS_V}`, sizes: "48x48" },
+        { url: `/favicon.svg${ICONS_V}`, type: "image/svg+xml" },
+        { url: `/favicon-96x96.png${ICONS_V}`, sizes: "96x96", type: "image/png" },
       ],
-      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+      apple: [{ url: `/apple-touch-icon.png${ICONS_V}`, sizes: "180x180" }],
     },
-    manifest: "/site.webmanifest",
+    manifest: `/site.webmanifest${ICONS_V}`,
     appleWebApp: { title: "favicon", startupImage: APPLE_STARTUP_IMAGES },
-    other: { "msapplication-config": "/browserconfig.xml", "msapplication-TileColor": "#1b2029" },
+    other: { "msapplication-config": `/browserconfig.xml${ICONS_V}`, "msapplication-TileColor": "#1b2029" },
   };
 }
 
